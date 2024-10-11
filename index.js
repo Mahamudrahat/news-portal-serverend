@@ -15,6 +15,13 @@ app.get('/news',(req,res)=>{
  res.send(news);
 });
 
+app.get('/news/:id',(req,res)=>{
+    const id = parseInt(req.params.id); 
+    const selectedNews = courses.find((news) => news._id === id);
+    res.send(selectedNews);
+   });  
+
+
 app.get('/catagories',(req,res)=>{
     res.send(catagories);
    });
